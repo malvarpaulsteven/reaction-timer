@@ -1,8 +1,11 @@
 <template>
-  <h1>Reaction Timer Project</h1>
-  <button @click="start" :disabled="isPlaying">Play</button>
-  <Block v-if="isPlaying" :delay="delay" @end="endGame"/>
-  <Results v-if="showResult" :score="score" />
+  <div class="main-block">
+    <h1>Reaction Timer Project</h1>
+    <button @click="start" :disabled="isPlaying">Play</button>
+    <Block v-if="isPlaying" :delay="delay" @end="endGame"/>
+    <Results v-if="showResult" :score="score" />
+  </div>
+ 
 </template>
 
 <script>
@@ -41,10 +44,22 @@ export default {
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
   text-align: center;
+  display: flex;
+  align-items: center;
+  /* align-content: center; */
+  justify-content: center;
   color: #444;
   margin: 0;
   padding: 0;
+  height: 100vh;
 }
+
+/* 
+.main-block {
+  border: 1px solid;
+  max-width: 1000em;
+  padding: 20px;
+} */
 
 button {
   background: #0faf87;
